@@ -68,7 +68,7 @@ session_start();
         <head>
         <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign In Form</title>
+    <title>Welcome</title>
     
     <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="style.css">
