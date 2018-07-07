@@ -1,0 +1,179 @@
+<style>
+    body {
+        padding: 0;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    section.cover {
+        background: linear-gradient(45deg, #154c80 50%, #163c81 50%);
+        padding: 20px 10%;
+        border-bottom: 50px solid transparent;
+        height: 90%;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+
+    section nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.4rem;
+        color: #fff;
+    }
+
+    section nav ul {
+        list-style-type: none;
+        font-size: 0.8rem;
+    }
+
+    section nav ul li {
+        float: left;
+        padding: 10px;
+    }
+
+    .ghost-btn {
+        margin: 0 10px;
+        padding: 10px;
+        border: 1px solid #fff;
+        border-radius: 5px;
+    }
+
+  
+    section.cover .content .heading {
+        font-size: 2.5rem;
+        font-weight: 500;
+    }
+
+    section.cover .content {
+        color: #fff;
+        padding: 40px 0;
+        position: relative;
+    }
+
+    section.cover .content .highlight {
+        font-size: 10px;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+</style>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+    \
+    <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="style.css">
+</head>
+<section>
+        <div class="row">
+    
+            <nav>
+                    <span class="logo" style="margin-left:10%">
+                        <img src="http://ftbroadcast.com/wp-content/uploads/2017/02/Untitled-design.png">
+                    </span>
+                    <ul>
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">News</a>
+                        </li>
+                        <li>
+                            <a href="#">Your Voice</a>
+                        </li>
+                        <li>
+                            <a href="#">Editor's Desk</a>
+                        </li>
+                        <li>
+                            <a href="#">FT Exclusive</a>
+                        </li>
+                        <li>
+                            <a href="#">Lifelines</a>
+                        </li>
+                        <li>
+                            <a href="login.html">Sign In</a>
+                        </li>
+                        <li class="ghost-btn">
+                            <a href="form.html">Sign up for free</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+    
+<body>
+
+    <form style="margin-top: 1%" action="register.php" method="post" name="signup_form" onsubmit="return validateForm()">
+
+        <h3 style="text-align:center">Sign Up</h3>
+       
+
+        <fieldset>
+            <legend>
+               Register</legend>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="user_name">
+
+            <label for="mail">Email:</label>
+            <input type="email" id="mail" name="user_email">
+            <!--  Uncomment this for javascript validation
+            <label for="emails">Email:</label>
+            <input type="text" id="mail" name="user_email"> -->
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="user_password">
+            <label for="password">Re-Enter Password:</label>
+            <input type="password" id="password1" name="user_password1">
+            <label for="university">University:</label>
+            <input type="text" id="university" name="user_university">
+            <label for="mobile_no">Mobile Number:</label>
+            <input type="text" id="mobile_no" name="user_mobile_no">
+
+        </fieldset>
+
+
+        <button type="submit">Sign Up</button>
+        <h4><a href="login.html"> Already have an account? Login Here</a></h4>
+
+    </form>
+
+</body>
+
+</html>
+
+<script type="text/javascript">
+    function validateForm() {
+        // email validation using javascript works perfectly fine
+        // var x = document.forms["signup_form"]["user_email"].value;
+        // var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+        // if (!filter.test(x))
+        // {
+        //     alert('Please provide a valid email address');
+
+        //     return false;
+        // }
+        var xpass = document.forms["signup_form"]["user_password"].value;
+        var pas = /^([a-zA-Z0-9_\.\-]){5,10}$/;
+        if (!pas.test(xpass)) {
+            alert("Invalid password; must be minimum five digits");
+
+            return false
+        }
+
+
+        var xnumber = document.forms["signup_form"]["user_mobile_no"].value;
+        var no = /^\d{10}$/;
+        if (!no.test(xnumber)) {
+            alert("Invalid number; must be ten digits");
+
+            return false
+        }
+
+    }
+</script>
